@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/03/2016 04:46:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <id name="numeroDeCuenta" type="string">
+            <column name="`numero de cuenta`" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="64" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="30" />
+        </property>
+        <one-to-one name="password" class="model.Password"></one-to-one>
+    </class>
+</hibernate-mapping>
